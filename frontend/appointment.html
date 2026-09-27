@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book confidential mental health appointments with verified specialists on MindfulSpace.">
+    <meta name="keywords" content="book therapy appointment, student counseling, mental health specialist, online consultation">
+    <meta name="author" content="MindfulSpace Warriors">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#6A0DAD">
+    <link rel="canonical" href="https://www.MindfulSpace.gu-saurabh.site/appointment.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.MindfulSpace.gu-saurabh.site/appointment.html">
+    <meta property="og:title" content="MindfulSpace - Book Your Mental Health Appointment">
+    <meta property="og:description" content="Schedule a private session with experienced mental health professionals through MindfulSpace.">
+    <meta property="og:image" content="https://www.MindfulSpace.gu-saurabh.site/images/og.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.MindfulSpace.gu-saurabh.site/appointment.html">
+    <meta property="twitter:title" content="MindfulSpace - Book Your Mental Health Appointment">
+    <meta property="twitter:description" content="Schedule a private session with experienced mental health professionals through MindfulSpace.">
+    <meta property="twitter:image" content="https://www.MindfulSpace.gu-saurabh.site/images/og.png">
+    
+    <title>MindfulSpace - Book Your Mental Health Appointment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/appointment.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGQVVS916K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RGQVVS916K');
+    </script>
+</head>
+
+<body>
+    <script src="js/header-component.js"></script>
+    <!-- Hero Section / Appointment Flow -->
+    <main class="appointment-container">
+        <!-- Hero Section -->
+        <section class="appointment-hero">
+            <div class="hero-text header-section">
+                <h2>Book Your Serenity</h2>
+                <p>Find the right therapist for your journey. A safe space for your mind to bloom, curated with empathy and professional expertise.</p>
+            </div>
+            <div class="hero-banner">
+                <!-- Fallback to a gradient if image not found -->
+                <div style="background: linear-gradient(120deg, #1b3b3a 0%, #366764 100%); height: 250px; width: 100%; border-radius: 30px;"></div>
+                <div class="online-badge">
+                    <span class="online-dot"></span> 12 Specialists Online Now
+                </div>
+            </div>
+        </section>
+
+        <div id="booking-flow">
+            <!-- Steps indicator -->
+            <div class="steps-indicator">
+                <div class="step active" id="step-1-indicator">
+                    <div class="step-circle">1</div>
+                    <span>Select Therapist</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" id="step-2-indicator">
+                    <div class="step-circle">2</div>
+                    <span>Schedule</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" id="step-3-indicator">
+                    <div class="step-circle">3</div>
+                    <span>Details</span>
+                </div>
+            </div>
+
+            <!-- Step 1: Specialists -->
+            <section id="step-1" class="step-content active">
+                <div class="step-1-layout">
+                    <aside class="filters-sidebar">
+                        <h3 style="color:#366764; margin-bottom: 15px;">Refine Search</h3>
+                        
+                        <div class="filter-group">
+                            <label style="font-weight: 500; font-size: 0.9em; display:block; margin-bottom:10px;">Specialty</label>
+                            <div style="display:flex; flex-direction:column; gap:8px;">
+                                <label><input type="checkbox" checked> Anxiety & Stress</label>
+                                <label><input type="checkbox"> Depression</label>
+                                <label><input type="checkbox"> Relationships</label>
+                            </div>
+                        </div>
+                        
+                        <div class="emergency-notice" style="background:#fdecec; padding:15px; border-radius:10px; margin-top:30px;">
+                            <h4 style="color:#a83836; margin:0 0 10px 0;"><i class="fas fa-exclamation-triangle"></i> Emergency Notice</h4>
+                            <p style="font-size:0.85em; color:#67040d; margin-bottom:10px;">If you are in immediate danger or a crisis, please do not use this booking system.</p>
+                            <a href="#" style="color:#a83836; font-size:0.85em; font-weight:bold;">Find Crisis Helplines</a>
+                        </div>
+                    </aside>
+                    
+                    <div class="specialists-carousel">
+                        <div class="carousel-controls">
+                            <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="specialists-grid" id="specialists-container">
+                            <!-- Loaded dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2: Schedule -->
+            <section id="step-2" class="step-content">
+                <div class="schedule-container">
+                    <button class="back-btn" onclick="goToStep(1)"><i class="fas fa-arrow-left"></i> Back</button>
+                    <h3>Schedule Your Visit</h3>
+                    <p>Select a time that suits your mental pace.</p>
+                    
+                    <div class="session-types">
+                        <label><input type="radio" name="sessionType" value="Video" checked> Video</label>
+                        <label><input type="radio" name="sessionType" value="Audio"> Audio</label>
+                        <label><input type="radio" name="sessionType" value="Chat"> Chat</label>
+                    </div>
+
+                    <div class="datetime-picker">
+                        <div class="date-picker">
+                            <label>Select Date</label>
+                            <input type="date" id="appointment-date" min="" required>
+                        </div>
+                        <div class="time-picker">
+                            <label>Available Slots</label>
+                            <div class="slots-grid" id="time-slots">
+                                <button type="button" class="slot-btn" data-time="09:00 AM">09:00 AM</button>
+                                <button type="button" class="slot-btn" data-time="10:30 AM">10:30 AM</button>
+                                <button type="button" class="slot-btn" data-time="01:00 PM">01:00 PM</button>
+                                <button type="button" class="slot-btn" data-time="02:30 PM">02:30 PM</button>
+                                <button type="button" class="slot-btn" data-time="04:00 PM">04:00 PM</button>
+                                <button type="button" class="slot-btn" data-time="05:30 PM">05:30 PM</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary continue-btn" id="btn-to-step-3" disabled>Continue to Details</button>
+                </div>
+            </section>
+
+            <!-- Step 3: Details -->
+            <section id="step-3" class="step-content">
+                <div class="details-container">
+                    <button class="back-btn" onclick="goToStep(2)"><i class="fas fa-arrow-left"></i> Back</button>
+                    <h3>Your Details</h3>
+                    
+                    <form id="booking-form">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="patient-name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="patient-email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Tell us a bit about your concern (Optional)</label>
+                            <textarea id="patient-concern" rows="4" placeholder="Briefly describe what you'd like to talk about..."></textarea>
+                        </div>
+
+                        <div class="booking-summary-card">
+                            <h4>Booking Summary</h4>
+                            <div class="summary-row">
+                                <span>Therapist</span>
+                                <strong id="summary-therapist">--</strong>
+                            </div>
+                            <div class="summary-row">
+                                <span>Date & Time</span>
+                                <strong id="summary-datetime">--</strong>
+                            </div>
+                            <div class="summary-row">
+                                <span>Session Type</span>
+                                <strong id="summary-session">--</strong>
+                            </div>
+                            <div class="summary-total">
+                                <span>Total Amount</span>
+                                <strong id="summary-price">--</strong>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary confirm-booking-btn" id="confirm-booking">Confirm and Book</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- Confirmation View -->
+        <div id="confirmation-view" style="display: none;">
+            <div class="confirmation-modal">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Booking Confirmed</h2>
+                <p>Your journey toward inner peace continues. We've sent a confirmation email with all the details.</p>
+                <p><strong>Appointment #:</strong> <span id="conf-apt-number"></span></p>
+
+                <div class="conf-details-card">
+                    <div class="conf-header">
+                        <div>
+                            <span class="label">APPOINTMENT DETAILS</span>
+                            <h3 id="conf-session-type">Video Consultation</h3>
+                        </div>
+                        <div class="conf-therapist-img">
+                            <img id="conf-therapist-img" src="" alt="Therapist">
+                        </div>
+                    </div>
+                    <div class="conf-body">
+                        <div class="conf-item">
+                            <i class="fas fa-user text-primary"></i>
+                            <div>
+                                <span>Therapist</span>
+                                <strong id="conf-therapist">--</strong>
+                            </div>
+                        </div>
+                        <div class="conf-item">
+                            <i class="fas fa-calendar text-primary"></i>
+                            <div>
+                                <span>Date</span>
+                                <strong id="conf-date">--</strong>
+                            </div>
+                        </div>
+                        <div class="conf-item">
+                            <i class="fas fa-clock text-primary"></i>
+                            <div>
+                                <span>Time</span>
+                                <strong id="conf-time">--</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="dashboard.html" class="btn-primary dashboard-link">Go to Dashboard</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-brain"></i>
+                        <h2>MindfulSpace</h2>
+                    </div>
+                    <p>Supporting student mental health and wellbeing across higher education institutions in India.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="mood.html">Track Mood</a></li>
+                        <li><a href="mental-home.html">Check Mental Health</a></li>
+                        <li><a href="AI-support.html">AI Support</a></li>
+                        <li><a href="appointment.html">Book Appointments</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> mindfulspace.team@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> Helpline: 9152987821</li>
+                        <li><i class="fas fa-ambulance"></i> Emergency: 100</li>
+                        <li><i class="fas fa-map-marker-alt"></i> India</li>
+                    </ul>
+                </div>
+            </div>
+
+           
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/common-auth.js"></script>
+    <script src="js/appointment.js"></script>
+    
+   </body>
+
+</html>

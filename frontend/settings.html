@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - MindfulSpace</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/ico.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/ico.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/ico.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGQVVS916K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RGQVVS916K');
+    </script>
+</head>
+<body>
+    <!-- Add notification container -->
+    <div class="notifications-container" id="notifications-container"></div>
+    
+    <!-- Header Section -->
+    <script src="js/header-component.js"></script>
+
+    <!-- Settings Container -->
+    <div class="settings-container">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="header-content">
+                    <h1><i class="fas fa-cog"></i> Account Settings</h1>
+                    <p>Manage your account security and preferences</p>
+                </div>
+                <div class="breadcrumb">
+                    <a href="dashboard.html">Dashboard</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Settings</span>
+                </div>
+            </div>
+
+            <!-- Settings Sections -->
+            <div class="settings-sections">
+                
+                <!-- Account Information Section -->
+                <div class="settings-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-user-circle"></i> Account Information</h2>
+                        <p>View your current account details</p>
+                    </div>
+                    <div class="section-content">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <div class="info-label">
+                                    <i class="fas fa-envelope"></i>
+                                    Current Email
+                                </div>
+                                <div class="info-value" id="current-email">Loading...</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Account Created
+                                </div>
+                                <div class="info-value" id="account-created">Loading...</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">
+                                    <i class="fas fa-key"></i>
+                                    Last Password Change
+                                </div>
+                                <div class="info-value" id="last-password-change">Loading...</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Account Status
+                                </div>
+                                <div class="info-value">
+                                    <span class="status-badge verified" id="account-status">
+                                        <i class="fas fa-check-circle"></i> Verified
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trusted Contact Section -->
+                <div class="settings-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-user-shield"></i> Emergency Support Contact</h2>
+                        <p>This person can be contacted if MindfulSpace detects a high-risk crisis and you have enabled emergency alerts.</p>
+                    </div>
+                    <div class="section-content">
+                        <div id="trusted-contact-view" class="trusted-contact-view">
+                            <p id="trusted-contact-empty">No emergency support contact has been added yet.</p>
+                            <div id="trusted-contact-details" style="display: none;">
+                                <div class="trusted-contact-grid">
+                                    <div><strong>Name</strong><span id="view-trusted-contact-name"></span></div>
+                                    <div><strong>Relationship</strong><span id="view-trusted-contact-relationship"></span></div>
+                                    <div><strong>Phone</strong><span id="view-trusted-contact-phone"></span></div>
+                                    <div><strong>Email</strong><span id="view-trusted-contact-email"></span></div>
+                                    <div><strong>Consent for emergency alerts</strong><span id="view-trusted-contact-consent"></span></div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn-primary" id="edit-trusted-contact"><i class="fas fa-edit"></i> Edit Contact</button>
+                                    <button type="button" class="btn-secondary" id="remove-trusted-contact-view"><i class="fas fa-user-slash"></i> Remove Contact</button>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-primary" id="add-trusted-contact"><i class="fas fa-user-plus"></i> Add Trusted Contact</button>
+                            <p class="form-note">Only the contact information needed for emergency notification is used. Chat conversation content is not included in emergency alerts.</p>
+                        </div>
+                        <form id="trusted-contact-form" class="settings-form" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="trusted-contact-name"><i class="fas fa-user"></i> Full Name</label>
+                                    <input type="text" id="trusted-contact-name" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="trusted-contact-relationship"><i class="fas fa-users"></i> Relationship</label>
+                                    <select id="trusted-contact-relationship" class="form-input" required>
+                                        <option value="">Select relationship</option>
+                                        <option value="Parent">Parent</option>
+                                        <option value="Guardian">Guardian</option>
+                                        <option value="Sibling">Sibling</option>
+                                        <option value="Friend">Friend</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="trusted-contact-phone"><i class="fas fa-phone"></i> Phone Number</label>
+                                    <input type="tel" id="trusted-contact-phone" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="trusted-contact-email"><i class="fas fa-envelope"></i> Email Address</label>
+                                    <input type="email" id="trusted-contact-email" class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="trusted-contact-consent">
+                                <label for="trusted-contact-consent">Emergency alerts enabled. I consent to MindfulSpace contacting this person when a high-risk crisis is detected.</label>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Save Contact</button>
+                                <button type="button" class="btn-secondary" id="cancel-trusted-contact"><i class="fas fa-times"></i> Cancel</button>
+                            </div>
+                            <p id="trusted-contact-status" class="form-note"></p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Change Email Section -->
+                <div class="settings-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-envelope-open"></i> Change Email Address</h2>
+                        <p>Update your email address with OTP verification</p>
+                    </div>
+                    <div class="section-content">
+                        <form id="change-email-form" class="settings-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="current-email-input">
+                                        <i class="fas fa-envelope"></i> Current Email
+                                    </label>
+                                    <input type="email" id="current-email-input" class="form-input" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-email">
+                                        <i class="fas fa-envelope-open"></i> New Email Address
+                                    </label>
+                                    <input type="email" id="new-email" class="form-input" placeholder="Enter new email address" required>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-paper-plane"></i> Send Verification OTP
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Change Password Section -->
+                <div class="settings-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-lock"></i> Change Password</h2>
+                        <p>Update your password for better security</p>
+                    </div>
+                    <div class="section-content">
+                        <form id="change-password-form" class="settings-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="current-password">
+                                        <i class="fas fa-lock"></i> Current Password
+                                    </label>
+                                    <div class="password-input-group">
+                                        <input type="password" id="current-password" class="form-input" placeholder="Enter current password" required>
+                                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('current-password', this)">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="new-password">
+                                        <i class="fas fa-key"></i> New Password
+                                    </label>
+                                    <div class="password-input-group">
+                                        <input type="password" id="new-password" class="form-input" placeholder="Enter new password" required>
+                                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('new-password', this)">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="password-requirements">
+                                        <small>Password must be at least 6 characters long</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-new-password">
+                                        <i class="fas fa-key"></i> Confirm New Password
+                                    </label>
+                                    <div class="password-input-group">
+                                        <input type="password" id="confirm-new-password" class="form-input" placeholder="Confirm new password" required>
+                                        <button type="button" class="password-toggle" onclick="togglePasswordVisibility('confirm-new-password', this)">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-save"></i> Update Password
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Danger Zone Section -->
+                <div class="settings-section danger-zone">
+                    <div class="section-header">
+                        <h2><i class="fas fa-exclamation-triangle"></i> Danger Zone</h2>
+                        <p>Irreversible actions that affect your account</p>
+                    </div>
+                    <div class="section-content">
+                        <div class="danger-item">
+                            <div class="danger-info">
+                                <h3>Delete Account</h3>
+                                <p>Permanently delete your account and all associated data. This action cannot be undone.</p>
+                            </div>
+                            <button class="btn-danger" id="delete-account-btn">
+                                <i class="fas fa-trash-alt"></i> Delete Account
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OTP Verification Modal -->
+    <div class="modal-overlay" id="otp-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-shield-alt"></i> Email Verification</h3>
+                <button class="modal-close" onclick="closeOTPModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="verification-text">
+                    We've sent a 6-digit verification code to your new email address. 
+                    Please enter it below to confirm the change.
+                </p>
+                <form id="email-otp-form">
+                    <div class="otp-input-container">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                        <input type="text" class="otp-input" maxlength="1" pattern="[0-9]">
+                    </div>
+                    <div class="otp-actions">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-check"></i> Verify Email
+                        </button>
+                        <button type="button" class="btn-secondary" id="resend-email-otp">
+                            <i class="fas fa-redo"></i> Resend Code
+                        </button>
+                    </div>
+                </form>
+                <div class="otp-timer" id="email-otp-timer" style="display: none;">
+                    <span>Resend code in <span id="email-timer-countdown">60</span> seconds</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Account Confirmation Modal -->
+    <div class="modal-overlay" id="delete-confirmation-modal">
+        <div class="modal-content danger-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Delete Account</h3>
+                <button class="modal-close" onclick="closeDeleteModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="warning-message">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p><strong>This action cannot be undone!</strong></p>
+                    <p>This will permanently delete your account and remove all your data from our servers, including:</p>
+                    <ul>
+                        <li>Your profile information</li>
+                        <li>All mood tracking history</li>
+                        <li>Counseling session records</li>
+                        <li>Account settings and preferences</li>
+                    </ul>
+                </div>
+                <form id="delete-account-form">
+                    <div class="form-group">
+                        <label for="delete-password">
+                            <i class="fas fa-lock"></i> Enter your password to confirm deletion
+                        </label>
+                        <div class="password-input-group">
+                            <input type="password" id="delete-password" class="form-input" placeholder="Enter your password" required>
+                            <button type="button" class="password-toggle" onclick="togglePasswordVisibility('delete-password', this)">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="confirmation-text">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="confirm-delete" required>
+                            <span class="checkmark"></span>
+                            I understand that this action is permanent and cannot be undone
+                        </label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeDeleteModal()">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                        <button type="submit" class="btn-danger">
+                            <i class="fas fa-trash-alt"></i> Delete My Account
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-brain"></i>
+                        <h2>MindfulSpace</h2>
+                    </div>
+                    <p>Supporting student mental health and wellbeing across higher education institutions in India.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="mood.html">Track Mood</a></li>
+                        <li><a href="mental-home.html">Check Mental Health</a></li>
+                        <li><a href="AI-support.html">AI Support</a></li>
+                        <li><a href="appointment.html">Book Appointments</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> mindfulspace.team@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> Helpline: 9152987821</li>
+                        <li><i class="fas fa-ambulance"></i> Emergency: 100</li>
+                        <li><i class="fas fa-map-marker-alt"></i> India</li>
+                    </ul>
+                </div>
+            </div>
+
+            
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/common-auth.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Analysis - MindfulSpace</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/ico.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/ico.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/ico.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mental-health.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGQVVS916K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RGQVVS916K');
+    </script>
+</head>
+<body>
+    <div class="notifications-container" id="notifications-container"></div>
+    
+    <script src="js/header-component.js"></script>
+
+    <main class="analysis-container">
+        
+        <div class="container">
+            <!-- Module Progress Tracker -->
+            <div class="module-progress">
+                <div class="progress-item active" id="progress-vitals">
+                    <span class="progress-number">1</span>
+                    <div class="progress-info">
+                        <strong>Health & Vitals</strong>
+                        <small>Physical health assessment</small>
+                    </div>
+                    <i class="fas fa-check progress-check" style="display: none;"></i>
+                </div>
+                <div class="progress-item" id="progress-dass21">
+                    <span class="progress-number">2</span>
+                    <div class="progress-info">
+                        <strong>DASS-21</strong>
+                        <small>Depression, Anxiety, Stress</small>
+                    </div>
+                    <i class="fas fa-check progress-check" style="display: none;"></i>
+                </div>
+                <div class="progress-item" id="progress-gad7">
+                    <span class="progress-number">3</span>
+                    <div class="progress-info">
+                        <strong>GAD-7</strong>
+                        <small>Generalized Anxiety</small>
+                    </div>
+                    <i class="fas fa-check progress-check" style="display: none;"></i>
+                </div>
+                <div class="progress-item" id="progress-phq9">
+                    <span class="progress-number">4</span>
+                    <div class="progress-info">
+                        <strong>PHQ-9</strong>
+                        <small>Depression Screening</small>
+                    </div>
+                    <i class="fas fa-check progress-check" style="display: none;"></i>
+                </div>
+            </div>
+
+            <!-- Module Content Container -->
+            <div id="module-container">
+                <!-- Modules will be loaded here dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/common-auth.js"></script>
+    <script src="js/mental-health-modular.js"></script>
+</body>
+</html>

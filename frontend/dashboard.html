@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="MindfulSpace Dashboard - Access your personalized mental health resources, track your wellness journey, and get support tailored to your needs.">
+    <meta name="keywords" content="mental health dashboard, student wellness tracking, personalized support, mental health resources">
+    <meta name="author" content="MindfulSpace Warriors">
+    <meta name="robots" content="noindex, nofollow"> <!-- Protected page -->
+    <meta name="theme-color" content="#6A0DAD">
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/ico.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/ico.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/ico.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    
+    <!-- No Open Graph or Twitter tags for protected pages -->
+    
+    <!-- Mobile App Capability -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Authentication Required -->
+    <meta name="auth-required" content="true">
+    
+    <title>MindfulSpace - Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGQVVS916K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RGQVVS916K');
+    </script>
+</head>
+<body>
+    <!-- Add notification container -->
+    <div class="notifications-container" id="notifications-container"></div>
+    
+    <!-- Header Section -->
+    <script src="js/header-component.js"></script>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard-container">
+        <div class="container">
+            <div class="welcome-card">
+                <h1>Welcome to your Dashboard, <span id="user-name">User</span>!</h1>
+                <p>Here you can access all your mental wellness resources, track your progress, and get personalized support.</p>
+            </div>
+            
+            <div class="profile-section">
+                <div class="profile-avatar" id="profile-avatar">U</div>
+                <div class="profile-info">
+                    <h2 id="profile-name">User Name</h2>
+                    <p id="profile-email">user@example.com</p>
+                </div>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-clipboard-list"></i> Daily Check-in</h3>
+                    <p>Track your mood and mental wellbeing with our daily check-in tool.</p>
+                    <button class="btn-primary" onclick="window.location.href='mood.html'">Start Check-in</button>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-robot"></i> AI Support</h3>
+                    <p>Get instant support from our AI-powered mental health assistant.</p>
+                    <button class="btn-primary" onclick="window.location.href='AI-support.html'">Chat Now</button>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-heart"></i> Mental Health</h3>
+                    <p>Access comprehensive mental health resources and assessments.</p>
+                    <button class="btn-primary" onclick="window.location.href='mental-home.html'">Explore</button>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-calendar-alt"></i> Appointments</h3>
+                    <p>Schedule confidential sessions with mental health professionals.</p>
+                    <button class="btn-primary" onclick="window.location.href='appointment.html'">Book Session</button>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-cog"></i> Account Settings</h3>
+                    <p>Manage your profile, notifications, and privacy preferences.</p>
+                    <button class="btn-primary" onclick="window.location.href='settings.html'">Settings</button>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-user"></i> Profile</h3>
+                    <p>View and update your personal information and preferences.</p>
+                    <button class="btn-primary" onclick="window.location.href='profile.html'">View Profile</button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-brain"></i>
+                        <h2>MindfulSpace</h2>
+                    </div>
+                    <p>Supporting student mental health and wellbeing across higher education institutions in India.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="mood.html">Track Mood</a></li>
+                        <li><a href="mental-home.html">Check Mental Health</a></li>
+                        <li><a href="AI-support.html">AI Support</a></li>
+                        <li><a href="appointment.html">Book Appointments</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> mindfulspace.team@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> Helpline: 9152987821</li>
+                        <li><i class="fas fa-ambulance"></i> Emergency: 100</li>
+                        <li><i class="fas fa-map-marker-alt"></i> India</li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/common-auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const authToken = localStorage.getItem('authToken');
+            if (!authToken) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            const userData = JSON.parse(localStorage.getItem('userData') || '{}');
+            
+            if (userData) {
+                const fullName = `${userData.firstName || ''} ${userData.lastName || ''}`.trim();
+                const initials = ((userData.firstName || '').charAt(0) + (userData.lastName || '').charAt(0)).toUpperCase();
+                
+                document.getElementById('user-name').textContent = userData.firstName || 'User';
+                
+                document.getElementById('profile-name').textContent = fullName || 'User Name';
+                document.getElementById('profile-email').textContent = userData.email || 'user@example.com';
+                document.getElementById('profile-avatar').textContent = initials || 'U';
+            }
+
+            const justLoggedIn = localStorage.getItem('justLoggedIn');
+            if (justLoggedIn === 'true') {
+                showSuccess(`Welcome back, ${userData.firstName || 'User'}!`);
+                localStorage.removeItem('justLoggedIn');
+            }
+
+            if (typeof checkAndUpdateMoodButton === 'function') {
+                checkAndUpdateMoodButton();
+            }
+        });
+    </script>
+
+</body>
+</html>
